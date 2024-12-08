@@ -121,58 +121,40 @@ export type Product = {
   updated_at: string;
 };
 
-export const navItems: NavItem[] = [
+export const navItems = [
   {
-    title: 'Dashboard',
-    url: '/dashboard/overview',
-    icon: 'dashboard',
-    isActive: false,
-    shortcut: ['d', 'd'],
-    items: [] // Empty array as there are no child items for Dashboard
-  },
-  {
-    title: 'Employee',
-    url: '/dashboard/employee',
-    icon: 'user',
-    shortcut: ['e', 'e'],
-    isActive: false,
-    items: [] // No child items
-  },
-  {
-    title: 'Product',
-    url: '/dashboard/product',
-    icon: 'product',
-    shortcut: ['p', 'p'],
-    isActive: false,
-    items: [] // No child items
-  },
-  {
-    title: 'Account',
-    url: '#', // Placeholder as there is no direct link for the parent
-    icon: 'billing',
-    isActive: true,
-
+    title: 'Overview',
     items: [
       {
-        title: 'Profile',
-        url: '/dashboard/profile',
-        icon: 'userPen',
-        shortcut: ['m', 'm']
+        title: 'Dashboard',
+        url: '/dashboard',
+        icon: 'layoutGrid'
       },
       {
-        title: 'Login',
-        shortcut: ['l', 'l'],
-        url: '/',
-        icon: 'login'
+        title: 'Employee',
+        url: '/dashboard/employee',
+        icon: 'users'
+      },
+      {
+        title: 'Product',
+        url: '/dashboard/product',
+        icon: 'package'
+      },
+      {
+        title: 'Profil',
+        url: '/dashboard/profile',
+        icon: 'user'
       }
     ]
   },
   {
-    title: 'Kanban',
-    url: '/dashboard/kanban',
-    icon: 'kanban',
-    shortcut: ['k', 'k'],
-    isActive: false,
-    items: [] // No child items
+    title: 'Content',
+    items: [
+      {
+        title: 'Post',
+        url: '/dashboard/blog',
+        icon: 'fileText'
+      }
+    ]
   }
 ];

@@ -1,20 +1,31 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   images: {
+    domains: ['images.unsplash.com'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'utfs.io',
-        port: ''
-      },
-      {
-        protocol: 'https',
-        hostname: 'api.slingacademy.com',
-        port: ''
+        hostname: '**'
       }
     ]
   },
-  transpilePackages: ['geist']
+  experimental: {
+    serverActions: true
+  },
+  api: {
+    bodyParser: {
+      sizeLimit: '10mb'
+    },
+    responseLimit: '10mb'
+  },
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx']
 };
 
-module.exports = nextConfig;
+module.exports = {
+  webpack: (config) => {
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+    return config;
+  }
+};

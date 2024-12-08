@@ -1,0 +1,191 @@
+.math-input-wrapper {
+  padding: 12px;
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+.math-input {
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  border: 1px solid hsl(var(--input));
+  border-radius: 4px;
+  color: hsl(var(--foreground));
+}
+
+.katex-display {
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 1rem 0;
+}
+
+.embed-container {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.embed-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.instagram-embed {
+  min-width: 100% !important;
+  width: 100% !important;
+  min-height: 450px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.twitter-embed {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.twitter-embed iframe {
+  width: 100% !important;
+  max-width: 550px !important;
+  border-radius: 0.5rem;
+}
+
+.editor-container {
+  position: relative;
+  width: 100%;
+}
+
+.toolbarIsOpen [data-item-name='convert-to'] {
+  display: none;
+}
+
+.ce-block--selected {
+  background-color: rgba(46, 170, 220, 0.08);
+}
+
+/* Styles pour les tableaux */
+.tc-table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+}
+
+.tc-row {
+  border: 1px solid hsl(var(--border));
+}
+
+.tc-cell {
+  border: 1px solid hsl(var(--border));
+  padding: 0.75rem;
+}
+
+.btn--primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+.cdx-attaches {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--background));
+}
+.ce-block__content {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: unset !important;
+  height: auto !important;
+}
+
+.ce-block--selected .ce-block__content {
+  margin: 0;
+  padding: 0;
+}
+
+.tradingview-widget-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 500px !important;
+  min-height: 500px !important;
+  position: relative !important;
+  display: block !important;
+}
+
+.tradingview-widget-container > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 500px !important;
+}
+
+/* Supprime les éléments fantômes */
+.tradingview-widget-container:empty {
+  display: none !important;
+}
+
+.tradingview-widget-container iframe {
+  pointer-events: all !important;
+  user-select: all !important;
+  -webkit-user-select: all !important;
+}
+
+.chart-tool-container {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+}
+
+.chart-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-edit-button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+}
+
+.chart-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

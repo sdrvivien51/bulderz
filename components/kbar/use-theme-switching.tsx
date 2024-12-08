@@ -1,36 +1,25 @@
-import { useRegisterActions } from 'kbar';
-import { useTheme } from 'next-themes';
+'use client';
 
-const useThemeSwitching = () => {
-  const { theme, setTheme } = useTheme();
+import { KBar } from '@/components/kbar';
+import AppSidebar from '@/components/layout/app-sidebar';
+import Header from '@/components/layout/header';
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar';
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+interface ClientLayoutProps {
+  children: React.ReactNode;
+  defaultOpen: boolean;
+}
 
-  const themeAction = [
-    {
-      id: 'toggleTheme',
-      name: 'Toggle Theme',
-      shortcut: ['t', 't'],
-      section: 'Theme',
-      perform: toggleTheme
-    },
-    {
-      id: 'setLightTheme',
-      name: 'Set Light Theme',
-      section: 'Theme',
-      perform: () => setTheme('light')
-    },
-    {
-      id: 'setDarkTheme',
-      name: 'Set Dark Theme',
-      section: 'Theme',
-      perform: () => setTheme('dark')
-    }
-  ];
-
-  useRegisterActions(themeAction, [theme]);
-};
-
-export default useThemeSwitching;
+export function ClientLayout({ children, defaultOpen }: ClientLayoutProps) {
+  return (
+    <KBar>
+      <SidebarProvider defaultOpen={defaultOpen}>
+        <AppSidebar />
+        <SidebarInset>
+          <Header />
+          {children}
+        </SidebarInset>
+      </SidebarProvider>
+    </KBar>
+  );
+}
